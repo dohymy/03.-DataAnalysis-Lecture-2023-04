@@ -1,0 +1,28 @@
+{% extends "14.html" %}
+{% block title %}인터파크{% endblock %}
+{% block subtitle %}인터파크 베스트셀러  <i class="fas fa-home"></i>{% endblock %}
+{% block content %}
+
+    <h3 style="text-align: center;">베스트셀러(인터파크 추천)</h3>
+    <table style="margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto; width: 100%; border-top: 1px solid #444444; border-collapse: collapse;">
+        <tr style = "border-bottom: 1px solid #444444; padding: 10px;">
+            <th style="text-align: center;">순위</th>
+            <th style="text-align: center;">이미지</th>
+            <th style="text-align: center;">제목</th>
+            <th style="text-align: center;">저자</th>
+            <th style="text-align: center;">출판사</th>
+            <th style="text-align: center;">가격</th>
+        </tr>
+        {% for book in book_list %}
+        <tr  style = "border-bottom: 1px solid #444444; padding: 10px;">
+            <td style="text-align: center;">{{book.순위}}</td>
+            <td style="text-align: center;"><img src="{{book.이미지}}" height="40px"></td>
+            <td><a href="{{book.href}}" target="_blank">{{book.제목}}</a></td>
+            <td>{{book.저자}}</td>
+            <td>{{book.출판사}}</td>
+            <td>{{book.가격}}</td>
+        </tr>
+        {% endfor %}
+    <table>
+    
+{% endblock %}
