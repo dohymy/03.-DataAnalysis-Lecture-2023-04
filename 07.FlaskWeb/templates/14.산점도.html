@@ -5,28 +5,29 @@
 
     <form action="/scatter" method="post">
         <table style="margin-left: auto; margin-right: auto;">
+            <h3 style="text-align: center;">산점도 그리기</h3>
             <tr>
-                <td>점의 갯수</td>
-                <td><input type="text" name="num"></td>
+                <td style="width: 30%;"><label class="col-form-label">점의 갯수</label></td>
+                <td style="width: 70%;"><input type="text" name="num" class="form-control"></td>
             </tr>
             <tr>
-                <td>X 평균</td>
-                <td><input type="text" name="mean"></td>
+                <td style="width: 30%;"><label class="col-form-label">X 평균 </label></td>
+                <td style="width: 70%;"><input type="text" name="mean" class="form-control"></td>
             </tr>
             <tr>
-                <td>X 표준편차</td>
-                <td><input type="text" name="std"></td>
+                <td style="width: 30%;"><label class="col-form-label">X 표준편차 </label></td>
+                <td style="width: 70%;"><input type="text" name="std" class="form-control"></td>
             </tr>
             <tr>
-                <td>Y 최소값</td>
-                <td><input type="text" name="min"></td>
+                <td style="width: 30%;"><label class="col-form-label">Y 최소값 </label></td>
+                <td style="width: 70%;"><input type="text" name="min" class="form-control"></td>
             </tr>
             <tr>
-                <td>Y 최대값</td>
-                <td><input type="text" name="max"></td>
+                <td style="width: 30%;"><label class="col-form-label">Y 최대값 </label></td>
+                <td style="width: 70%;"><input type="text" name="max" class="form-control"></td>
             </tr>
             <tr>
-                <td colspan="2"><input type="submit" value="확인"></td>
+                <td colspan="2"><input type="submit" class="btn btn-outline-primary" value="확인"></td>
             </tr>
         </table>
     </form>

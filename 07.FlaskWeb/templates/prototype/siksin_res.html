@@ -1,0 +1,26 @@
+{% extends "prototype/base.html" %}
+{% block title %}식신{% endblock %}
+{% block subtitle %}식신{% endblock %}
+{% block content %}
+
+    <h3 style="text-align: center;">{{place}} 맛집 검색 결과</h3>
+    <table style="margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto; width: 100%; border-top: 1px solid #444444; border-collapse: collapse;">
+        <tr style = "border-bottom: 1px solid #444444; padding: 10px;">
+            <th style="text-align: center;">이미지</th>
+            <th style="text-align: center;">상호명</th>
+            <th style="text-align: center;">별점</th>
+            <th style="text-align: center;">위치</th>
+            <th style="text-align: center;">메뉴</th>
+        </tr>
+        {% for siksin in siksin_list %}
+            <tr  style = "border-bottom: 1px solid #444444; padding: 10px;">
+                <td style="text-align: center;"><img src="{{siksin.이미지}}" height="40px"></td>
+                <td>{{siksin.상호명}}</td>
+                <td>{{siksin.별점}}</td>
+                <td>{{siksin.위치}}</td>
+                <td>{{siksin.메뉴}}</td>
+            </tr>
+        {% endfor %}
+    <table>
+    
+{% endblock %}

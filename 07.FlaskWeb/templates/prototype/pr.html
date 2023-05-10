@@ -1,0 +1,148 @@
+{% extends "prototype/base.html" %}
+{% block title %}자기소개{% endblock %}
+{% block weather %}{{ weather | safe()}}{% endblock %}
+{% block additional_head %}
+    <script>
+        $(document).ready(function() {
+            $('#pr').css('display','none')
+            
+            $('.show').click(function(e) {
+                $('#pr').toggle();
+            });
+        });
+    </script>
+    <script>
+        function toggleImg() {
+            document.getElementById("before").src = "{{url_for('static', filename='img/rose.jpg')}}";
+        }
+    </script>
+    <style>
+        table {text-align: center;}
+        tr {text-align: center;}
+        .btn {
+            width: 100px;
+            margin: auto;
+            display: block;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <h2 style="text-align: center;">자기 소개</h2>
+                <div style="margin-bottom: 50px; text-align: center;" id="hide">
+                </div>
+                <button class="show btn btn-outline-secondary" style="margin-bottom: 30px; text-align: center;">나는 누구?</button>
+
+        </tr>
+        <tr>
+            <div class="card" id="pr">
+                <div class="card-header bg-info text-white" style="padding-top: 10px; text-align: center;">이름 : 도현명</div>
+                <img style="display : block; margin : auto;" class="card-img-top" src="{{url_for('static', filename='img/hello.jpg')}}" alt="Card image" style="width: 400px;height: 400px;">
+                <div class="card-body" style="height: 100px; margin-top: 15px; text-align: center;">
+                전에는 사회복지사를 꿈꿨지만<br>
+                지금은 프로그래밍 공부를 하고 있습니다. <br>
+                </div>
+                <div class="card-footer" style="text-align: center;">잘 부탁드려요!</div>
+            </div>
+        </tr>
+        <tr>
+            <h2 style="margin-top : 30px; text-align: center;">저의 취미는</h2>
+            <hr>
+            <h3 style="text-align: center;">주로 집에서 할 수 있는 활동을 좋아합니다.</h3>
+            <!-- Carousel -->
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+                
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="text-align: center;">
+                        <img src="{{url_for('static', filename='img/youtubelogo.svg')}}" class="d-block" style="width:1200px; height: 400px;">
+                        <div class="carousel-caption">
+                            <h1><strong>유튜브 시청</strong></h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{url_for('static', filename='img/netflix.jpg')}}" class="d-block" style="width:1200px; height: 400px;">
+                        <div class="carousel-caption">
+                            <h1><strong>넷플릭스 시청</strong></h1>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{url_for('static', filename='img/beer.jpg')}}" class="d-block" style="width:1200px; height: 400px;">
+                        <div class="carousel-caption">
+                            <h1><strong>맥주도 한 잔</strong></h1>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </tr>
+        <tr>
+            <h2 style="margin-top : 100px; text-align: center;">음식 이야기</h2>
+            <hr>
+            <div class="dropdown">
+                <button type="button" class="btn btn-outline-primary dropdown-toggle" style="width: 1000px;" data-bs-toggle="dropdown">
+                좋아하는 음식
+                </button>
+                <ul class="dropdown-menu " style="width: 1000px;text-align: center;">
+                <li><a class="dropdown-item" href="#">No.1 : 칼국수</a></li>
+                <hr>
+                <li><a class="dropdown-item" href="#">No.2 : 짬뽕</a></li>
+                <hr>
+                <li><a class="dropdown-item" href="#">No.3 : 족발</a></li>
+                </ul>
+            </div>
+        </tr>
+        <tr>
+            <h2 style="margin-top : 100px; text-align: center;">여행 이야기</h2>
+            <hr>
+            <h3 style="text-align: center;">2019.01.19~01.22 도쿄에서</h3>
+            <span class="border border-3">
+                <img src="{{url_for('static', filename='img/j01.jpg')}}" alt="" style="width: 300px; height: 300px;">
+            </span>
+            <span class="border border-3">
+                <img src="{{url_for('static', filename='img/j02.jpg')}}" alt="" style="width: 300px; height: 300px;">
+            </span>
+            <span class="border border-3">
+                <img src="{{url_for('static', filename='img/j03.jpg')}}" alt="" style="width: 300px; height: 300px;">
+            </span>
+            <br>
+            <span class="border border-3">
+                <img src="{{url_for('static', filename='img/j04.jpg')}}" alt="" style="width: 300px; height: 300px;">
+            </span>
+            <span class="border border-3">
+                <img src="{{url_for('static', filename='img/j05.jpg')}}" alt="" style="width: 300px; height: 300px;">
+            </span>
+            <span class="border border-3">
+                <img src="{{url_for('static', filename='img/j06.jpg')}}" alt="" style="width: 300px; height: 300px;">
+            </span>
+            <div style="margin-top: 100px; text-align: center;">
+            <h3>오늘은 싸게 떠날 수 있을까?</h3>
+            </div>
+            <hr>
+
+            <div style="margin-bottom: 100px;">
+                <button type="button" onclick="location.href='https://finance.naver.com/marketindex/exchangeDetail.nhn?marketindexCd=FX_JPYKRW' "
+                class="btn btn-outline-primary">오늘의<br>엔화는<br>얼마?</button>
+            </div>
+        </tr>
+        <tr>
+            
+        </tr>
+    </table>
+{% endblock %}

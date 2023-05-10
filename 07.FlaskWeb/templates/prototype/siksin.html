@@ -1,0 +1,14 @@
+{% extends "prototype/base.html" %}
+{% block title %}식신{% endblock %}
+{% block weather %}{{ weather | safe()}}{% endblock %}
+{% block subtitle %}식신{% endblock %}
+{% block content %}
+    <h3><strong>장소를 입력하세요.</strong></h3>
+    <form action="/siksin" method="post">
+        <div>
+            <input type="text" name="place">
+            <input type="submit" class="btn btn-outline-primary" value="확인">
+        </div>
+    </form>
+    
+{% endblock %}

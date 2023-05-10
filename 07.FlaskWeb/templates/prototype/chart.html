@@ -1,0 +1,27 @@
+{% extends "prototype/base.html" %}
+{% block title %}지니차트{% endblock %}
+{% block weather %}{{ weather | safe()}}{% endblock %}
+{% block subtitle %}지니차트 인기순위{% endblock %}
+{% block content %}
+
+    <h3 style="text-align: center;">지니차트 인기순위 TOP 200</h3>
+    <table style="margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto; width: 100%; border-top: 1px solid #444444; border-collapse: collapse;">
+        <tr style = "border-bottom: 1px solid #444444; padding: 10px;">
+            <th style="text-align: center;">순위</th>
+            <th style="text-align: center;">이미지</th>
+            <th style="text-align: center;">타이틀</th>
+            <th style="text-align: center;">아티스트</th>
+            <th style="text-align: center;">앨범</th>
+        </tr>
+        {% for chart in chart_list %}
+            <tr  style = "border-bottom: 1px solid #444444; padding: 10px;">
+                <td style="text-align: center;">{{chart.순위}}</td>
+                <td style="text-align: center;"><img src="{{chart.이미지}}" height="40px"></td>
+                <td><a href="{{chart.href}}" target="_blank">{{chart.제목}}</a></td>
+                <td>{{chart.아티스트}}</td>
+                <td>{{chart.앨범}}</td>
+            </tr>
+        {% endfor %}
+    <table>
+    
+{% endblock %}

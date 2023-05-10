@@ -1,0 +1,11 @@
+{% extends "prototype/base.html" %}
+{% block title %}Home{% endblock %}
+<!-- safe를 써야 제대로 받아온다 -->
+{% block weather %}{{ weather | safe()}}{% endblock %}
+{% block subtitle %}Home{% endblock %}
+{% block content %}
+    <div>
+        홈 화면입니다.
+    </div>
+{% endblock %}
+
