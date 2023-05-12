@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 랭킹 크롤링</title>
+    <style>
+        table {
+          width: 100%;
+          border-top: 1px solid #444444;
+          border-collapse: collapse;
+        }
+        th, td {
+          border-bottom: 1px solid #444444;
+          padding: 10px;
+        }
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h3 style="text-align: center;">유튜브 랭킹(구독자순) TOP20</h3>
+    <table>
+        <tr>
+            <th>순위</th>
+            <th>카테고리</th>
+            <th>채널명</th>
+            <th>구독자수</th>
+            <th>조회수</th>
+            <th>비디오수</th>
+        </tr>
+        {% for rank in rank_list %}
+        <tr>
+            <td style="text-align: center;">{{rank.순위}}</td>
+            <td style="text-align: center;">{{rank.카테고리}}</td>
+            <td style="text-align: center;">{{rank.채널명}}</td>
+            <td style="text-align: center;">{{rank.구독자수}}</td>
+            <td style="text-align: center;">{{rank.조회수}}</td>
+            <td style="text-align: center;">{{rank.비디오수}}</td>
+        </tr>
+        {% endfor %}
+    <table>
+    
+</body>
+</html>
